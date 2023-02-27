@@ -1,2 +1,5 @@
 # gopro-framegrab
- grab frames for each second on an GoPro 4K video
+
+ *Notes: developed to extract underwater gopro video survey for orthomosaic process*
+
+
