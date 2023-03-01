@@ -9,7 +9,7 @@
 4. Activate the conda environment: `conda activate framegrab`
 5. Run `python main.py <path to the video or folders>`
 
-[^1]: If you prefer using other virtual environment or need help to install conda environment, please refer to the following sections
+[^1]: If you prefer using other virtual environment or need help to install conda environment, please refer to the last section
 
 ### Requirements
 You can also install the required libraries to your preferred environment (the version may vary)
@@ -20,7 +20,7 @@ You can also install the required libraries to your preferred environment (the v
 - gst-plugins-good=1.18.5
 - gstreamer=1.18.5
 
-### Need help to install conda (Anaconda/Miniconda)
+### Need help to install conda (Anaconda/Miniconda)?
 Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. Please refer to the [Anaconda official website](https://docs.anaconda.com/anaconda/install/) to install conda on your machine. 
 
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is preferred as it takes less space on your machine and install less dependent files. However, both Anaconda and Miniconda will work with this repo.
