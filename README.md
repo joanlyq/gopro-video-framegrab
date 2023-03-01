@@ -12,10 +12,10 @@
 If you see following warning messages while running:
 ``` 
 cv::handleMessage OpenCV | GStreamer warning: your GStreamer installation is missing a required plugin
- cv::handleMessage OpenCV | GStreamer warning: Embedded video playback halted; module uridecodebin0 reported: Your GStreamer installation is missing a plug-in.
- cv::GStreamerCapture::open OpenCV | GStreamer warning: unable to start pipeline
- cv::GStreamerCapture::isPipelinePlaying OpenCV | GStreamer warning: GStreamer: pipeline have not been created 
- ```
+cv::handleMessage OpenCV | GStreamer warning: Embedded video playback halted; module uridecodebin0 reported: Your GStreamer installation is missing a plug-in.
+cv::GStreamerCapture::open OpenCV | GStreamer warning: unable to start pipeline
+cv::GStreamerCapture::isPipelinePlaying OpenCV | GStreamer warning: GStreamer: pipeline have not been created 
+```
 The code should still be running. 
 
 [^1]: If you prefer using other virtual environment or need help to install conda environment, please refer to the last section
