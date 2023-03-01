@@ -7,18 +7,19 @@
 2. Change directory to inside repo: `cd ./gopro-video-framegrab`
 3. Open Terminal (MacOS or Linux) or Anaconda prompt (Windows) and create **conda[^1] environment** from yml file: `conda env create -f environment.yml`
 4. Activate the conda environment: `conda activate framegrab`
-5. Run `python main.py <path to the video or folders>`[^2]
+5. Run `python main.py <path to the video or folders>`
 
-[^1]: If you prefer using other virtual environment or need help to install conda environment, please refer to the last section
-[^2]: If you see following warning messages while running, ```
-
- cv::handleMessage OpenCV | GStreamer warning: your GStreamer installation is missing a required plugin
+If you see following warning messages while running:
+``` 
+cv::handleMessage OpenCV | GStreamer warning: your GStreamer installation is missing a required plugin
  cv::handleMessage OpenCV | GStreamer warning: Embedded video playback halted; module uridecodebin0 reported: Your GStreamer installation is missing a plug-in.
  cv::GStreamerCapture::open OpenCV | GStreamer warning: unable to start pipeline
- cv::GStreamerCapture::isPipelinePlaying OpenCV | GStreamer warning: GStreamer: pipeline have not been created
-
-```
+ cv::GStreamerCapture::isPipelinePlaying OpenCV | GStreamer warning: GStreamer: pipeline have not been created 
+ ```
 The code should still be running. 
+
+[^1]: If you prefer using other virtual environment or need help to install conda environment, please refer to the last section
+
 
 ### Requirements
 You can also install the required libraries to your preferred environment (the version may vary)
