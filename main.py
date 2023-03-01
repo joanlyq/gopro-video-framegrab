@@ -1,30 +1,38 @@
-import cv2
+import os
+import argparse
+import glob
+from tqdm import tqdm
+from framegrab import framegrab
+import threading
 
-# Open the video file
-video = cv2.VideoCapture('path/to/video/file.mp4')
+def parse_args():
+    parser = argparse.ArgumentParser(description='grab frames from video or folders contain MP4 files')
+    parser.add_argument("path", default='', help='the path to the video or folder that contain videos')
+    args = parser.parse_args()
+    return args.path
 
-# Get the frames per second (fps)
-fps = video.get(cv2.CAP_PROP_FPS)
+if __name__ == '__main__':
+    # Parse command line arguments
+    path = parse_args()
+    if os.path.isfile(path):
+        print("One video only")
+        framegrab(path)
+    elif os.path.isdir(path):
+        print("Look for all videos in the folder")
+        video_list = [f for f in tqdm(glob.glob(path + "/**/*.mp4", recursive=True))] # you can modify the path that suits your own folder structure better if needed **/T*/
+        print("Total {} mp4 videos found".format(len(video_list)))
+        threads = []
+        for video in tqdm(video_list, desc='Start processing videos'):
+            t = threading.Thread(target=framegrab,args=(video,))
+            t.start()
+            threads.append(t)
+        for t in tqdm(threads, desc='finishing processing videos'):
+            t.join()
+    else:
+        print("The input path is not valid, please check again.")
 
-# Set the frame count
-frame_count = 0
+    #grab the directory of individual mp4 videos
 
-# Loop through the video
-while True:
-    # Read the frame
-    ret, frame = video.read()
+    print("\n\nDONE")
+    print("\n\n\n\t /\_ /\    ♡\n\t(• - • ̳)\n\t |、ﾞ~ヽ\n\t じしf_; )ノ \n    © Joan Li, 2023")
 
-    # If the frame was not read, break out of the loop
-    if not ret:
-        break
-
-    # Check if it's time to grab a frame
-    if frame_count % fps == 0:
-        # Save the frame as an image file
-        cv2.imwrite(f'frame{frame_count}.jpg', frame)
-
-    # Increment the frame count
-    frame_count += 1
-
-# Release the video file
-video.release()
